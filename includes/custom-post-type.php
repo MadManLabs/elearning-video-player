@@ -83,26 +83,10 @@ function evp_create_posttype() {
 		// Get the location data if its already been entered
 		$videolink = get_post_meta($post->ID, '_videolink', true);
 		// Echo out the field
-		echo '<input type="text" name="_videolink" value="' . $videolink  . '" class="widefat" />
+		echo '<input id="video_link" type="text" name="_videolink" value="' . $videolink  . '" class="widefat" />
 		<p><em>Support direct link (.mp4) and Youtube</em></p>
 		<p><em>Direct Link example: http://vjs.zencdn.net/v/oceans.mp4</em></p>
 		<p><em>Youtube Link example: https://www.youtube.com/watch?v=up5CSxJwpWQ</em></p>
-		<script>
-			jQuery("input[name=_videolink]").focusout(function(){
-				var url = jQuery(this).val();
-				if (url != undefined || url != "") {        
-			        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
-			        var match = url.match(regExp);
-			        if (match && match[2].length == 11) {
-			        	jQuery(this).val("https://www.youtube.com/watch?v=" + match[2]);
-			        	jQuery(this).next().html("You just entered a <b>Youtube</b> link");
-			        } else {
-			            jQuery(this).next().text("You just entered a link");
-			        }
-			    }	
-				
-			});
-		</script>
 		';
 
 	}
@@ -136,7 +120,7 @@ function evp_create_posttype() {
 		// Get the location data if its already been entered
 		$videopopuptime = get_post_meta($post->ID, '_popuptime', true);
 		// Echo out the field
-		echo '<input type="text" name="_popuptime" value="' . $videopopuptime  . '" />
+		echo '<input id="popup_time" type="text" name="_popuptime" value="' . $videopopuptime  . '" />
 		<p><em>Example: 60 (seconds).</em></p>
 		<p><em>If you don\'t provide popup time, the default value is 999999, which means popup won\'t show up for many case. (Still can be show by press Q)</em></p>
 		';
@@ -150,7 +134,7 @@ function evp_create_posttype() {
 		echo '<p><em>Only Support multiple choice</em></p>
 		<p><em>Compose Quizzes in HTML format.</em></p>
 		<p><em>Please use the format below:</em></p>
-		<textarea class="wp-editor-area" cols="40" style="height:320px;width:100%;" name="_quizz">' . $videoquizz  . '</textarea>
+		<textarea id="quizz" class="wp-editor-area" cols="40" style="height:320px;width:100%;" name="_quizz">' . $videoquizz  . '</textarea>
 		<p><em>Example:</em></p>
 		<div>
 		<xmp>
@@ -176,21 +160,26 @@ function evp_create_posttype() {
 	}
 	function evp_shortcode_generate(){
 	    global $post;
-	
 		// Get the location data if its already been entered
 		$videosub = get_post_meta($post->ID, '_sub', true);
 		// Echo out the field
 		echo '<input id="shortcode-generate" class="widefat" type="text" value=\'[e-video id="' . $post->ID  . '"]\'  readonly/>
 		<span id ="copy-shortcode" class="btn" data-clipboard-target="#shortcode-generate">Copy Shortcode</span>
 		<p><em>Default width and height is 480px and 270px, add <b>width="your-width" height="your-height"</b> to shortcode to set your own width and height</em></p>
-		<script>jQuery(function($){
-			new Clipboard(".btn");
-			$("#copy-shortcode").click(function(){$(this).html("Shortcode Copied");});
-		});
-		
-		</script>
 		<p>Example: <b>[evideo id="' . $post->ID  . '" width="720px" height="405px"]</b></p>
+		<script>
+			// change view link in admin bar
+			
+			jQuery(function($){
+				$("#wp-admin-bar-view a").attr("href", "'.plugins_url('/videojs-quizz/video.php?id='. $post->ID, __FILE__).'");
+				$("#wp-admin-bar-view a").click(function(){
+					window.open("'.plugins_url('/videojs-quizz/video.php?id='. $post->ID, __FILE__).'", "_blank");
+					return false;
+				});
+			});
+		</script>
 		';
+		
 	}
 	
 	// Save the Metabox Data
@@ -227,7 +216,6 @@ function evp_create_posttype() {
 			}
 			
 		}
-	
 	}
 
 add_action('save_post', 'wpt_save_evideo_meta', 1, 2); // save the custom fields

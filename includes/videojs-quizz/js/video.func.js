@@ -1,4 +1,4 @@
-$(function () {
+jQuery(function ($) {
     $('video').on('contextmenu',function() { return false; });
     var myPlayer = videojs('my_video_1');
     var countToTimePopup = true;

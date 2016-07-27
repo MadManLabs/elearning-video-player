@@ -8,8 +8,7 @@
  * Author URI: http://lequanghuy.xyz
  * License: GPLv2 or later
  */
-?>
-<?php
+ 
 // add shortcode
 require plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
@@ -22,11 +21,12 @@ function admin_evp_style_and_script() {
     	wp_enqueue_script( 'copy_clipboard', plugins_url('/includes/clipboard.min.js', __FILE__) );
         wp_enqueue_style( 'evp-style', plugins_url('/includes/style.css', __FILE__) );
         wp_enqueue_script('media-upload');
-        wp_enqueue_script('evp-upload', plugins_url('/includes/uploader.js', __FILE__));
+        wp_enqueue_script('evp-upload', plugins_url('/includes/evp-admin.js', __FILE__));
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');
     }
 }
-// add custom post type E-Video and it custom taxonomy
+
+// add custom post type E-Video and customize 
 require plugin_dir_path( __FILE__ ) . 'includes/custom-post-type.php';
 ?>
