@@ -10,13 +10,10 @@
  */
 ?>
 <?php
-
-
 // add shortcode
 require plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
 // add script and style to admin
-
 add_action('admin_head', 'admin_evp_style_and_script');
 function admin_evp_style_and_script() {
     global $post_type;
@@ -32,10 +29,4 @@ function admin_evp_style_and_script() {
 }
 // add custom post type E-Video and it custom taxonomy
 require plugin_dir_path( __FILE__ ) . 'includes/custom-post-type.php';
-
-
-
-
-// add something
-
 ?>
