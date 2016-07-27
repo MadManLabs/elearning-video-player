@@ -1,0 +1,15 @@
+[26-Jul-2016 04:48:47 UTC] PHP Warning:  require(../../../wp-blog-header.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 41
+[26-Jul-2016 04:48:47 UTC] PHP Stack trace:
+[26-Jul-2016 04:48:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[26-Jul-2016 04:48:47 UTC] PHP Fatal error:  require(): Failed opening required '../../../wp-blog-header.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 41
+[26-Jul-2016 04:48:47 UTC] PHP Stack trace:
+[26-Jul-2016 04:48:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[26-Jul-2016 04:49:12 UTC] PHP Warning:  require(../../../../wp-blog-header.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 41
+[26-Jul-2016 04:49:12 UTC] PHP Stack trace:
+[26-Jul-2016 04:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[26-Jul-2016 04:49:12 UTC] PHP Fatal error:  require(): Failed opening required '../../../../wp-blog-header.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 41
+[26-Jul-2016 04:49:12 UTC] PHP Stack trace:
+[26-Jul-2016 04:49:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[26-Jul-2016 04:51:55 UTC] PHP Fatal error:  Call to undefined function plugin_url() in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 9
+[26-Jul-2016 04:51:55 UTC] PHP Stack trace:
+[26-Jul-2016 04:51:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0

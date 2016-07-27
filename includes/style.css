@@ -1,0 +1,30 @@
+#edit-slug-box, 
+#minor-publishing-actions,
+#wp-admin-bar-view,
+.updated.notice.notice-success.is-dismissible p a {
+    display:none;
+}
+#copy-shortcode{
+    display:block;
+    margin-top: 10px;
+    border-radius:4px;
+    padding:5px;
+    background-color: #0085BA;
+    color:#fff;
+    text-align: center;
+}
+#copy-shortcode:hover,
+#preview-video:hover{
+    cursor:pointer;
+}
+#preview-video{
+    display:block;
+    margin-top: 10px;
+    border-radius:4px;
+    padding:5px;
+    background-color: #F7F7F7;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
