@@ -29,4 +29,7 @@ function admin_evp_style_and_script() {
 
 // add custom post type E-Video and customize 
 require plugin_dir_path( __FILE__ ) . 'includes/custom-post-type.php';
+
+// add custom columns to admin
+require plugin_dir_path( __FILE__ ) . 'includes/admin-columns.php';
 ?>

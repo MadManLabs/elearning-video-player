@@ -98,6 +98,7 @@ function evp_create_posttype() {
 		// Echo out the field
 		echo '<input id="sub_link" type="text" name="_sub" value="' . $videosub  . '" class="widefat" />
 		<p><em>Subtitle must be in .vtt format</em></p>
+		<p><em>Using <b>Upload Subtitle</b> to upload image to Library, click <b>File URL</b> then <b>Insert to Post</b> to update subtitle link field </em></p>
 		<input id="upload_sub_button"  type="button" value="Upload Subtitle" />
 		<p><em>You can use <a href="http://www.webvtt.org/" target="_blank">webvtt.org</a> to convert SRT to VTT</em></p>
 		<p><em>No need for youtube video</p></em>';
