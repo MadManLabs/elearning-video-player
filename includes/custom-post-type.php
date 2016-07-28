@@ -131,10 +131,19 @@ function evp_create_posttype() {
 		// Get the location data if its already been entered
 		$videoquizz = get_post_meta($post->ID, '_quizz', true);
 		// Echo out the field
-		echo '<p><em>Only Support multiple choice</em></p>
-		<p><em>Compose Quizzes in HTML format.</em></p>
-		<p><em>Please use the format below:</em></p>
-		<textarea id="quizz" class="wp-editor-area" cols="40" style="height:320px;width:100%;" name="_quizz">' . $videoquizz  . '</textarea>
+		echo '<p><em>Compose HTML multiple choice quizz (see example below)</em></p>
+		<div id="tab-container">
+		  <div id="tab-navigator">
+		    <span data-tab="text-tab" class="selected-tab">Text</span>
+		    <span data-tab="visual-tab">Visual</span>
+		  </div>
+		  <div id="tab-content">
+		    <div id="visual-tab" class="tab previous"></div>
+		    <div id="text-tab" class="tab current">
+		      <textarea id="quizz" class="wp-editor-area" cols="40" style="height:100%;width:100%;" name="_quizz">'.$videoquizz.'</textarea>
+		    </div>
+		  </div>
+		</div>
 		<p><em>Example:</em></p>
 		<div>
 		<xmp>
@@ -171,9 +180,9 @@ function evp_create_posttype() {
 			// change view link in admin bar
 			
 			jQuery(function($){
-				$("#wp-admin-bar-view a").attr("href", "'.plugins_url('/videojs-quizz/video.php?id='. $post->ID, __FILE__).'");
+				$("#wp-admin-bar-view a").attr("href", "'.plugins_url('/videojs-quizz/video.preview.php?id='. $post->ID, __FILE__).'");
 				$("#wp-admin-bar-view a").click(function(){
-					window.open("'.plugins_url('/videojs-quizz/video.php?id='. $post->ID, __FILE__).'", "_blank");
+					window.open("'.plugins_url('/videojs-quizz/video.preview.php?id='. $post->ID, __FILE__).'", "_blank");
 					return false;
 				});
 			});

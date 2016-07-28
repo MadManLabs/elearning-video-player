@@ -15,3 +15,44 @@
 #copy-shortcode:hover{
     cursor:pointer;
 }
+#tab-navigator span{
+   display:inline-block;
+    margin-top: 10px;
+    padding:5px;
+    background-color: #555;
+    color:#fff;
+    text-align: center;
+}
+#tab-navigator span:hover{
+  cursor:pointer;
+}
+#tab-navigator span.selected-tab{
+  background-color: #0085BA;
+}
+#tab-content{
+  height:320px;
+  border:1px dotted black;
+}
+#visual-tab{
+  padding-left:5px;
+  padding-right:5px;
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+.tab{
+  background-color:#F7F7F7;
+  height:100%;
+}
+.tab.previous{
+  display:none;
+}
+.quizz-choice{
+  width:100%;
+  margin-bottom:2px;
+  border:none;
+  border-radius:4px;
+  height:20px;
+}
+.quizz-choice[answer="right"]{
+  background-color:lightgreen;
+}

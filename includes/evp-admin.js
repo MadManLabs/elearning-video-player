@@ -59,5 +59,19 @@ jQuery(document).ready(function($) {
 			window.original_send_to_editor(html);
 		}
 	};
+	
+	// tab quizz
+	$("#visual-tab").html($("textarea#quizz").val());
+	$("#tab-navigator span").click(function(){
+	    $("#tab-navigator span").removeClass("selected-tab");
+	    $(this).addClass("selected-tab");
+	    $(".tab").removeClass("current");
+	    $(".tab").removeClass("previous");
+	    $("#" + $(this).data("tab")).addClass("current");
+	    $("#" + $(this).data("tab")).siblings().addClass("previous");
+	});
+	$("textarea#quizz").focusout(function(){
+	    $("#visual-tab").html($(this).val());
+	});
 
 });
