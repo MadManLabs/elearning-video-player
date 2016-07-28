@@ -176,7 +176,7 @@ function evp_create_posttype() {
 		echo '<input id="shortcode-generate" class="widefat" type="text" value=\'[e-video id="' . $post->ID  . '"]\'  readonly/>
 		<span id ="copy-shortcode" class="btn" data-clipboard-target="#shortcode-generate">Copy Shortcode</span>
 		<p><em>Default width and height is 480px and 270px, add <b>width="your-width" height="your-height"</b> to shortcode to set your own width and height</em></p>
-		<p>Example: <b>[evideo id="' . $post->ID  . '" width="720px" height="405px"]</b></p>
+		<p>Example: <b>[e-video id="' . $post->ID  . '" width="720px" height="405px"]</b></p>
 		<script>
 			// change view link in admin bar
 			
