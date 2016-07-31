@@ -13,15 +13,15 @@
 require plugin_dir_path( __FILE__ ) . 'includes/shortcode.php';
 
 // add script and style to admin
-add_action('admin_head', 'admin_evp_style_and_script');
-function admin_evp_style_and_script() {
+add_action('admin_head', 'lqh_evp_admin_style_and_script');
+function lqh_evp_admin_style_and_script() {
     global $post_type;
-    if ($post_type == 'evideo') {
+    if ($post_type == 'evideolqh') {
         wp_enqueue_script('jquery');
     	wp_enqueue_script( 'copy_clipboard', plugins_url('/includes/clipboard.min.js', __FILE__) );
-        wp_enqueue_style( 'evp-style', plugins_url('/includes/style.css', __FILE__) );
+        wp_enqueue_style( 'lqh-evp-admin-style', plugins_url('/includes/style.css', __FILE__) );
         wp_enqueue_script('media-upload');
-        wp_enqueue_script('evp-upload', plugins_url('/includes/evp-admin.js', __FILE__));
+        wp_enqueue_script('lqh-evp-admin-script', plugins_url('/includes/evp-admin.js', __FILE__));
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');
     }
@@ -40,7 +40,7 @@ function lqh_evp_custom_template($single) {
     global $wp_query, $post;
 
     /* Checks for single template by post type */
-    if ($post->post_type == "evideo"){
+    if ($post->post_type == "evideolqh"){
         if(is_single()){
         if(file_exists(plugin_dir_path( __FILE__ ) . 'includes/single-video.php'))
             return plugin_dir_path( __FILE__ ) . 'includes/single-video.php';

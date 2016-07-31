@@ -1,8 +1,8 @@
 <?php
 
-add_filter( 'manage_edit-evideo_columns', 'edit_evideo_columns' ) ;
+add_filter( 'manage_edit-evideolqh_columns', 'lqh_evp_edit_evideo_columns' ) ;
 
-function edit_evideo_columns( $columns ) {
+function lqh_evp_edit_evideo_columns( $columns ) {
 
 	$columns = array_slice($columns, 0, 2, true) +
     array('preview-video' => __( 'Preview' ), 'short' => __( 'Shortcode' )) +
@@ -10,9 +10,9 @@ function edit_evideo_columns( $columns ) {
 	return $columns;
 }
 
-add_action( 'manage_evideo_posts_custom_column', 'manage_evideo_columns', 10, 2 );
+add_action( 'manage_evideolqh_posts_custom_column', 'lqh_evp_manage_evideo_columns', 10, 2 );
 
-function manage_evideo_columns( $column, $post_id ) {
+function lqh_evp_manage_evideo_columns( $column, $post_id ) {
 	
 	switch( $column ) {
 
@@ -23,7 +23,7 @@ function manage_evideo_columns( $column, $post_id ) {
 			printf($previewbutton);
 			break;
 		case 'short' :
-			printf('[e-video id="'. $post_id .'"]');
+			printf('[lqh-e-video id="'. $post_id .'"]');
 			break;
 
 		/* Just break out of the switch statement for everything else. */

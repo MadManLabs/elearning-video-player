@@ -1,18 +1,18 @@
 <?php
 
-function evp_create_posttype() {
+function lqh_evp_create_posttype() {
 	
 	$labels = array(
-			'name'               => __( 'Elearning Videos', 'evideo-type' ),
-			'singular_name'      => __( 'Elearning Video', 'evideo-type' ),
-			'add_new'            => __( 'Add Video', 'evideo-type' ),
-			'add_new_item'       => __( 'Add Video', 'evideo-type' ),
-			'edit_item'          => __( 'Edit Video', 'evideo-type' ),
-			'new_item'           => __( 'New Video', 'evideo-type' ),
-			'view_item'          => __( 'View Video', 'evideo-type' ),
-			'search_items'       => __( 'Search Video', 'evideo-type' ),
-			'not_found'          => __( 'No videos found', 'evideo-type' ),
-			'not_found_in_trash' => __( 'No videos in the trash', 'evideo-type' ),
+			'name'               => __( 'Elearning Videos' ),
+			'singular_name'      => __( 'Elearning Video' ),
+			'add_new'            => __( 'Add Video' ),
+			'add_new_item'       => __( 'Add Video' ),
+			'edit_item'          => __( 'Edit Video' ),
+			'new_item'           => __( 'New Video' ),
+			'view_item'          => __( 'View Video' ),
+			'search_items'       => __( 'Search Video' ),
+			'not_found'          => __( 'No videos found' ),
+			'not_found_in_trash' => __( 'No videos in the trash' ),
 		);
 		$supports = array(
 			'title'
@@ -22,32 +22,32 @@ function evp_create_posttype() {
 			'supports'        => $supports,
 			'public'          => true,
 			'capability_type' => 'post',
-			'rewrite'         => array( 'slug' => 'evideo', ),
+			'rewrite'         => array( 'slug' => 'elearning-video-lqh', ),
 			'menu_position'   => 30,
 			'menu_icon'       => 'dashicons-format-video',
-			'register_meta_box_cb' => 'add_evideo_metaboxes'
+			'register_meta_box_cb' => 'lqh_evp_add_evideo_metaboxes'
 		);
 	
 	
-	register_post_type( 'evideo', $args	);
+	register_post_type( 'evideolqh', $args	);
 	
 	$labels2 = array(
-			'name'                       => __( 'E-Video Categories', 'evideo-type' ),
-			'singular_name'              => __( 'E-Video Category', 'evideo-type' ),
-			'menu_name'                  => __( 'E-Video Categories', 'evideo-type' ),
-			'edit_item'                  => __( 'Edit E-Video Category', 'evideo-type' ),
-			'update_item'                => __( 'Update E-Video Category', 'evideo-type' ),
-			'add_new_item'               => __( 'Add New E-Video Category', 'evideo-type' ),
-			'new_item_name'              => __( 'New E-Video Category Name', 'evideo-type' ),
-			'parent_item'                => __( 'Parent E-Video Category', 'evideo-type' ),
-			'parent_item_colon'          => __( 'Parent E-Video Category:', 'evideo-type' ),
-			'all_items'                  => __( 'All E-Video Categories', 'evideo-type' ),
-			'search_items'               => __( 'Search E-Video Categories', 'evideo-type' ),
-			'popular_items'              => __( 'Popular E-Video Categories', 'evideo-type' ),
-			'separate_items_with_commas' => __( 'Separate E-Video categories with commas', 'evideo-type' ),
-			'add_or_remove_items'        => __( 'Add or remove E-Video categories', 'evideo-type' ),
-			'choose_from_most_used'      => __( 'Choose from the most used E-Video categories', 'evideo-type' ),
-			'not_found'                  => __( 'No E-Video categories found.', 'evideo-type' ),
+			'name'                       => __( 'E-Video Categories' ),
+			'singular_name'              => __( 'E-Video Category' ),
+			'menu_name'                  => __( 'E-Video Categories' ),
+			'edit_item'                  => __( 'Edit E-Video Category' ),
+			'update_item'                => __( 'Update E-Video Category' ),
+			'add_new_item'               => __( 'Add New E-Video Category' ),
+			'new_item_name'              => __( 'New E-Video Category Name' ),
+			'parent_item'                => __( 'Parent E-Video Category' ),
+			'parent_item_colon'          => __( 'Parent E-Video Category:' ),
+			'all_items'                  => __( 'All E-Video Categories' ),
+			'search_items'               => __( 'Search E-Video Categories' ),
+			'popular_items'              => __( 'Popular E-Video Categories' ),
+			'separate_items_with_commas' => __( 'Separate E-Video categories with commas' ),
+			'add_or_remove_items'        => __( 'Add or remove E-Video categories' ),
+			'choose_from_most_used'      => __( 'Choose from the most used E-Video categories' ),
+			'not_found'                  => __( 'No E-Video categories found.' ),
 		);
 		$args2 = array(
 			'labels'            => $labels2,
@@ -56,24 +56,24 @@ function evp_create_posttype() {
 			'show_ui'           => true,
 			'show_tagcloud'     => true,
 			'hierarchical'      => true,
-			'rewrite'           => array( 'slug' => 'evideo-category' ),
+			'rewrite'           => array( 'slug' => 'elearning-video-lqh-category' ),
 			'show_admin_column' => true,
 			'query_var'         => true,
 		);
 		$args2 = apply_filters( 'evideo_post_type_category_args', $args2 );
 	
-	register_taxonomy( 'evideo-categories', 'evideo', $args2 );
+	register_taxonomy( 'evideolqh-categories', 'evideolqh', $args2 );
 	
 	// Add the Video Link Meta Boxes and show Shortcode
-	function add_evideo_metaboxes() {
-		add_meta_box('evideo-link', 'Video Links', 'evp_link', 'evideo', 'normal', 'high');
-		add_meta_box('evideo-subtitle', 'Video Subtitle', 'evp_sub', 'evideo', 'normal', 'high');
-		add_meta_box('evideo-poster', 'Video Poster', 'evp_poster', 'evideo', 'normal', 'high');
-		add_meta_box('evideo-time', 'Popup Time', 'evp_popuptime', 'evideo', 'normal', 'high');
-		add_meta_box('evideo-quizz', 'Quizzes', 'evp_quizz', 'evideo', 'normal', 'high');
-		add_meta_box('evideo-shortcode', 'Shortcode', 'evp_shortcode_generate', 'evideo', 'side', 'high');
+	function lqh_evp_add_evideo_metaboxes() {
+		add_meta_box('evideolqh-link', 'Video Links', 'lqh_evp_link', 'evideolqh', 'normal', 'high');
+		add_meta_box('evideolqh-subtitle', 'Video Subtitle', 'lqh_evp_sub', 'evideolqh', 'normal', 'high');
+		add_meta_box('evideolqh-poster', 'Video Poster', 'lqh_evp_poster', 'evideolqh', 'normal', 'high');
+		add_meta_box('evideolqh-time', 'Popup Time', 'lqh_evp_popuptime', 'evideolqh', 'normal', 'high');
+		add_meta_box('evideolqh-quizz', 'Quizzes', 'lqh_evp_quizz', 'evideolqh', 'normal', 'high');
+		add_meta_box('evideolqh-shortcode', 'Shortcode', 'lqh_evp_shortcode_generate', 'evideolqh', 'side', 'high');
 	}
-	function evp_link() {
+	function lqh_evp_link() {
 		global $post;
 	
 		// Noncename needed to verify where the data originated
@@ -90,7 +90,7 @@ function evp_create_posttype() {
 		';
 
 	}
-	function evp_sub(){
+	function lqh_evp_sub(){
 	    global $post;
 	
 		// Get the location data if its already been entered
@@ -103,7 +103,7 @@ function evp_create_posttype() {
 		<p><em>You can use <a href="http://www.webvtt.org/" target="_blank">webvtt.org</a> to convert SRT to VTT</em></p>
 		<p><em>No need for youtube video</p></em>';
 	}
-	function evp_poster(){
+	function lqh_evp_poster(){
 	    global $post;
 		
 		// Get the location data if its already been entered
@@ -115,7 +115,7 @@ function evp_create_posttype() {
 		<p><em>No need for youtube video</p></em>
 		';
 	}
-	function evp_popuptime(){
+	function lqh_evp_popuptime(){
 	    global $post;
 	
 		// Get the location data if its already been entered
@@ -126,7 +126,7 @@ function evp_create_posttype() {
 		<p><em>If you don\'t provide popup time, the default value is 999999, which means popup won\'t show up for many case. (Still can be show by press Q)</em></p>
 		';
 	}
-	function evp_quizz(){
+	function lqh_evp_quizz(){
 	    global $post;
 	
 		// Get the location data if its already been entered
@@ -168,7 +168,7 @@ function evp_create_posttype() {
 		</div>
 		';
 	}
-	function evp_shortcode_generate(){
+	function lqh_evp_shortcode_generate(){
 	    global $post;
 		// Get the location data if its already been entered
 		$videosub = get_post_meta($post->ID, '_sub', true);
@@ -182,7 +182,7 @@ function evp_create_posttype() {
 	}
 	
 	// Save the Metabox Data
-	function wpt_save_evideo_meta($post_id, $post) {
+	function lqh_evp_save_evideo_metas($post_id, $post) {
 		
 		// verify this came from the our screen and with proper authorization,
 		// because save_post can be triggered at other times
@@ -217,8 +217,8 @@ function evp_create_posttype() {
 		}
 	}
 
-add_action('save_post', 'wpt_save_evideo_meta', 1, 2); // save the custom fields
+add_action('save_post', 'lqh_evp_save_evideo_metas', 1, 2); // save the custom fields
 }
-add_action( 'init', 'evp_create_posttype' );
+add_action( 'init', 'lqh_evp_create_posttype' );
 
 ?>

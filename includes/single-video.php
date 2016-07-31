@@ -28,15 +28,15 @@ $quizz = get_post_meta( $post->ID, '_quizz', true );
            <?php echo !empty($quizz) ? $quizz : "There isn't any quizz in this video"; ?>
         </div>
         <div class="quizz-control quizz-middle">
-            <div class="quizz-close quizz-center"><span class="vjs-icon-cancel z150"></span>  Return
+            <div class="quizz-close quizz-center"><span class="vjs-icon-cancel z150"></span>  <b class="quizz-control-text">Return</b>
             </div>
             <div class="quizz-submit quizz-center">
-            Your Answers <span class="vjs-icon-circle-outline z150"></span> <span id="quizz-score">0</span>/<span id="quizz-all">0</span>
+            <b class="quizz-control-text">Your Answers</b> <span class="vjs-icon-circle-outline z150"></span> <span id="quizz-score">0</span>/<span id="quizz-all">0</span>
             </div>
-            <div class="quizz-again quizz-center"><span class="vjs-icon-replay z150"></span>  Again
+            <div class="quizz-again quizz-center"><span class="vjs-icon-replay z150"></span>  <b class="quizz-control-text">Again</b>
             </div>
             <div class="quizz-fullscreen quizz-center">
-                <span class="vjs-icon-fullscreen-enter z150"></span> Fullscreen</div>
+                <span class="vjs-icon-fullscreen-enter z150"></span> <b class="quizz-control-text">Fullscreen</b> </div>
             
         </div>   
     </div>
