@@ -1,7 +1,5 @@
-#edit-slug-box, 
-#minor-publishing-actions,
-.updated.notice.notice-success.is-dismissible p a {
-    display:none;
+#minor-publishing-actions{
+  display: none;
 }
 #copy-shortcode{
     display:block;

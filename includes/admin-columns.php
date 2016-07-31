@@ -19,7 +19,7 @@ function lqh_evp_manage_evideo_columns( $column, $post_id ) {
 		
 		case 'preview-video' :
 
-			$previewbutton = '<a href="'.esc_url(get_permalink( $post_id )).'" target="_blank"><span class="dashicons dashicons-controls-play"></span></a>';
+			$previewbutton = '<a href="'.esc_url(get_permalink( $post_id )).'" target="_blank"><span style="display:block;width: 0;height: 0;	border-top: 10px solid transparent;border-right: 10px solid #0085BA;border-bottom: 10px solid transparent;"></span></a>';
 			printf($previewbutton);
 			break;
 		case 'short' :
