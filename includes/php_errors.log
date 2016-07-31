@@ -13,3 +13,21 @@
 [26-Jul-2016 04:51:55 UTC] PHP Fatal error:  Call to undefined function plugin_url() in /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php on line 9
 [26-Jul-2016 04:51:55 UTC] PHP Stack trace:
 [26-Jul-2016 04:51:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[28-Jul-2016 20:03:02 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'lqh_mul_multiplevotesioplqh_create_vote_post_type' not found or invalid function name in /home/ubuntu/workspace/wp-includes/plugin.php on line 525
+[28-Jul-2016 20:03:02 UTC] PHP Stack trace:
+[28-Jul-2016 20:03:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[28-Jul-2016 20:03:02 UTC] PHP   2. require() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:1
+[28-Jul-2016 20:03:02 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-blog-header.php:13
+[28-Jul-2016 20:03:02 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[28-Jul-2016 20:03:02 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:93
+[28-Jul-2016 20:03:02 UTC] PHP   6. do_action() /home/ubuntu/workspace/wp-settings.php:393
+[28-Jul-2016 20:03:02 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/plugin.php:525}() /home/ubuntu/workspace/wp-includes/plugin.php:525
+[28-Jul-2016 20:03:03 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'lqh_mul_multiplevotesioplqh_create_vote_post_type' not found or invalid function name in /home/ubuntu/workspace/wp-includes/plugin.php on line 525
+[28-Jul-2016 20:03:03 UTC] PHP Stack trace:
+[28-Jul-2016 20:03:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:0
+[28-Jul-2016 20:03:03 UTC] PHP   2. require() /home/ubuntu/workspace/wp-content/plugins/elearning-video-player/includes/videojs-quizz/video.php:1
+[28-Jul-2016 20:03:03 UTC] PHP   3. require_once() /home/ubuntu/workspace/wp-blog-header.php:13
+[28-Jul-2016 20:03:03 UTC] PHP   4. require_once() /home/ubuntu/workspace/wp-load.php:37
+[28-Jul-2016 20:03:03 UTC] PHP   5. require_once() /home/ubuntu/workspace/wp-config.php:93
+[28-Jul-2016 20:03:03 UTC] PHP   6. do_action() /home/ubuntu/workspace/wp-settings.php:393
+[28-Jul-2016 20:03:03 UTC] PHP   7. call_user_func_array:{/home/ubuntu/workspace/wp-includes/plugin.php:525}() /home/ubuntu/workspace/wp-includes/plugin.php:525

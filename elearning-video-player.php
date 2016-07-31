@@ -32,4 +32,21 @@ require plugin_dir_path( __FILE__ ) . 'includes/custom-post-type.php';
 
 // add custom columns to admin
 require plugin_dir_path( __FILE__ ) . 'includes/admin-columns.php';
+
+// create single webpage view
+add_filter('single_template', 'lqh_evp_custom_template');
+
+function lqh_evp_custom_template($single) {
+    global $wp_query, $post;
+
+    /* Checks for single template by post type */
+    if ($post->post_type == "evideo"){
+        if(is_single()){
+        if(file_exists(plugin_dir_path( __FILE__ ) . 'includes/single-video.php'))
+            return plugin_dir_path( __FILE__ ) . 'includes/single-video.php';
+        }
+    }
+    return $single;
+}
+
 ?>

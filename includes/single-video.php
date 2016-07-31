@@ -1,21 +1,21 @@
-<?php require('../../../../../wp-blog-header.php'); 
-$link = get_post_meta( $_GET['id'], '_videolink', true );
-$sub = get_post_meta( $_GET['id'], '_sub', true );
-$poster = get_post_meta( $_GET['id'], '_poster', true );
-$popuptime = get_post_meta( $_GET['id'], '_popuptime', true );
-$quizz = get_post_meta( $_GET['id'], '_quizz', true );
+<?php
+global $post;
+$link = get_post_meta( $post->ID, '_videolink', true );
+$sub = get_post_meta( $post->ID, '_sub', true );
+$poster = get_post_meta( $post->ID, '_poster', true );
+$popuptime = get_post_meta( $post->ID, '_popuptime', true );
+$quizz = get_post_meta( $post->ID, '_quizz', true );
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset=utf-8 />
-<link href="css/video-js.5.8.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/css/video-js.5.8.min.css" rel="stylesheet">
+<link href="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/css/style.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-<script src="js/video-js.5.8.min.js"></script>
-<script src="js/videojs-youtube.js"></script>
-<script src="js/video.func.js"></script>    
-<script src="js/urlvar.js"></script>
+<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/video-js.5.8.min.js"></script>
+<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/videojs-youtube.js"></script>
+<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/video.func.js"></script>
 </head>
 <body>
     <div id="videohotkey">

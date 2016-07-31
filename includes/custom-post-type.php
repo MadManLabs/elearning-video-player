@@ -177,17 +177,6 @@ function evp_create_posttype() {
 		<span id ="copy-shortcode" class="btn" data-clipboard-target="#shortcode-generate">Copy Shortcode</span>
 		<p><em>Default width and height is 480px and 270px, add <b>width="your-width" height="your-height"</b> to shortcode to set your own width and height</em></p>
 		<p>Example: <b>[e-video id="' . $post->ID  . '" width="720px" height="405px"]</b></p>
-		<script>
-			// change view link in admin bar
-			
-			jQuery(function($){
-				$("#wp-admin-bar-view a").attr("href", "'.plugins_url('/videojs-quizz/video.preview.php?id='. $post->ID, __FILE__).'");
-				$("#wp-admin-bar-view a").click(function(){
-					window.open("'.plugins_url('/videojs-quizz/video.preview.php?id='. $post->ID, __FILE__).'", "_blank");
-					return false;
-				});
-			});
-		</script>
 		';
 		
 	}

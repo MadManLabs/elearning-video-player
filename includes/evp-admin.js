@@ -73,5 +73,7 @@ jQuery(document).ready(function($) {
 	$("textarea#quizz").focusout(function(){
 	    $("#visual-tab").html($(this).val());
 	});
-
+	// Change View Video Text
+	$("#wp-admin-bar-view a").html("Preview Video");
+	$("#wp-admin-bar-view a").attr("target", "_blank");
 });

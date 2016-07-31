@@ -19,8 +19,8 @@ function manage_evideo_columns( $column, $post_id ) {
 		
 		case 'preview-video' :
 
-			$countnumber = '<a href="'.plugins_url('/videojs-quizz/video.preview.php?id='. $post_id, __FILE__).'" target="_blank"><span class="dashicons dashicons-controls-play"></span></a>';
-			printf($countnumber );
+			$previewbutton = '<a href="'.esc_url(get_permalink( $post_id )).'" target="_blank"><span class="dashicons dashicons-controls-play"></span></a>';
+			printf($previewbutton);
 			break;
 		case 'short' :
 			printf('[e-video id="'. $post_id .'"]');
