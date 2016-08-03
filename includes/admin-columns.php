@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 add_filter( 'manage_edit-evideolqh_columns', 'lqh_evp_edit_evideo_columns' ) ;
 
 function lqh_evp_edit_evideo_columns( $columns ) {

@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 function lqh_evp_create_posttype() {
 	
 	$labels = array(

@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 function lqh_evp_shortcode($val) {
 	if(isset($val['width']) && isset($val['height'])){
 	    return '<iframe src="'. esc_url(get_permalink( $val['id'] )) .'" allowfullscreen width="'.$val['width'].'" height="'.$val['height'].'" style="border:none;"></iframe>';

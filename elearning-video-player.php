@@ -48,5 +48,27 @@ function lqh_evp_custom_template($single) {
     }
     return $single;
 }
-
+// add script and style to front
+add_action('wp_print_scripts', 'lqh_evp_front_script');
+function lqh_evp_front_script(){
+    global $wp_query, $post;
+    if ($post->post_type == "evideolqh"){
+        if(is_single()){
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('videojs', plugins_url('/includes/videojs-quizz/js/video-js.5.8.min.js', __FILE__), 5.8);
+        wp_enqueue_script('videojs-youtube', plugins_url('/includes/videojs-quizz/js/videojs-youtube.js', __FILE__));
+        wp_enqueue_script('videojs-functions', plugins_url('/includes/videojs-quizz/js/video.func.js', __FILE__));
+        }
+    }
+}
+add_action('wp_print_styles', 'lqh_evp_front_style');
+function lqh_evp_front_style(){
+    global $wp_query, $post;
+    if ($post->post_type == "evideolqh"){
+        if(is_single()){
+        wp_enqueue_style( 'videojs-style', plugins_url('/includes/videojs-quizz/css/video-js.5.8.min.css', __FILE__) );
+        wp_enqueue_style( 'videojs-quizz-style', plugins_url('/includes/videojs-quizz/css/style.css', __FILE__) );
+        }
+    }
+}
 ?>

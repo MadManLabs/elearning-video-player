@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 global $post;
 $link = get_post_meta( $post->ID, '_videolink', true );
 $sub = get_post_meta( $post->ID, '_sub', true );
@@ -10,12 +11,8 @@ $quizz = get_post_meta( $post->ID, '_quizz', true );
 <html>
 <head>
 <meta charset=utf-8 />
-<link href="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/css/video-js.5.8.min.css" rel="stylesheet">
-<link href="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/css/style.css" rel="stylesheet" type="text/css">
-<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
-<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/video-js.5.8.min.js"></script>
-<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/videojs-youtube.js"></script>
-<script src="<?php echo plugins_url('elearning-video-player');?>/includes/videojs-quizz/js/video.func.js"></script>
+<?php wp_print_styles(); ?>
+<?php wp_print_scripts(); ?>
 </head>
 <body>
     <div id="videohotkey">
