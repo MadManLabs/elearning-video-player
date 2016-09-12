@@ -6,13 +6,13 @@ Tags: video, player, elearning, quizz
 
 Requires at least: 4.0
 
-Tested up to: 4.5.3
+Tested up to: 4.6
 
 Stable tag: trunk
 License: GPLv2 or later
 
 
-A plugin that helps your viewers interact with your videos via quizzes 
+A plugin that helps your viewers interact with your videos via quizzes inside player.
 
 
 == Description ==
@@ -27,13 +27,13 @@ Upload the plugin folder to your plugins folder or Install via wordpress.org lib
 
 After installation, there is a page in dashboard with title "Elearning Videos", you can create new Video, creat Video Category and use shortcode to display in pages/ posts/...
 
-If you have problem with video link (not found), update permark link in settings.
+If you have problem with video link (not found), __update permark link in settings.__
 
 Shortcode:
-__[lqh-e-video id="vote_id"]__
+__[lqh-e-video id="video_id"]__
 
 
-Shortcodes are automatically generated when creating a new vote.
+Shortcodes are automatically generated when creating new video.
 
 
 == Screenshots ==
