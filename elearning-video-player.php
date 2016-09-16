@@ -3,7 +3,7 @@
  * Plugin Name: Elearning Video Player
  * Plugin URI: https://github.com/lequanghuylc/elearning-video-player
  * Description: A wordpress plugin that helps your viewers interact with your videos via quizzes
- * Version: 1.0.1 
+ * Version: 1.0.2 
  * Author: Huy Le 
  * Author URI: http://lequanghuy.xyz
  * License: GPLv2 or later
