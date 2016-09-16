@@ -196,25 +196,27 @@ function lqh_evp_create_posttype() {
 	
 		// OK, we're authenticated: we need to find and save the data
 		// We'll put it into an array to make it easier to loop though.
-		
-		$evideo_meta['_videolink'] = $_POST['_videolink'];
-		$evideo_meta['_sub'] = $_POST['_sub'];
-		$evideo_meta['_poster'] = $_POST['_poster'];
-		$evideo_meta['_popuptime'] = $_POST['_popuptime'];
-		$evideo_meta['_quizz'] = $_POST['_quizz'];
-		
-		// Add values of $events_meta as custom fields
-		
-		foreach ($evideo_meta as $key => $value) { // Cycle through the $evideo_meta array!
-			if( $post->post_type == 'revision' ) return; // Don't store custom data twice
-			$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
-			if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
-				update_post_meta($post->ID, $key, $value);
-			} else { // If the custom field doesn't have a value
-				add_post_meta($post->ID, $key, $value);
-			}
+		if( isset( $_POST['_videolink'] ) && $_POST['_sub'] && $_POST['_poster'] && $_POST['_popuptime'] && $_POST['_quizz']){
+			$evideo_meta['_videolink'] = $_POST['_videolink'];
+			$evideo_meta['_sub'] = $_POST['_sub'];
+			$evideo_meta['_poster'] = $_POST['_poster'];
+			$evideo_meta['_popuptime'] = $_POST['_popuptime'];
+			$evideo_meta['_quizz'] = $_POST['_quizz'];
 			
+			// Add values of $events_meta as custom fields
+			
+			foreach ($evideo_meta as $key => $value) { // Cycle through the $evideo_meta array!
+				if( $post->post_type == 'revision' ) return; // Don't store custom data twice
+				$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
+				if(get_post_meta($post->ID, $key, FALSE)) { // If the custom field already has a value
+					update_post_meta($post->ID, $key, $value);
+				} else { // If the custom field doesn't have a value
+					add_post_meta($post->ID, $key, $value);
+				}
+				
+			}
 		}
+		
 	}
 
 add_action('save_post', 'lqh_evp_save_evideo_metas', 1, 2); // save the custom fields
